@@ -1,0 +1,244 @@
+{
+	"info": {
+		"_postman_id": "5a4959cd-2e93-431b-a168-4d1001e5dd3b",
+		"name": "CookbookCompass",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14460355"
+	},
+	"item": [
+		{
+			"name": "create_user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"first_name\": \"umair\",\r\n    \"last_name\": \"mangera\",\r\n    \"email\": \"umair.mangera@gmail.com\",\r\n    \"password\": \"Hello123!\",\r\n    \"age\": 18,\r\n    \"gender\": \"male\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"umair.mangera@gmail.com\",\r\n    \"password\": \"Hello123!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/login",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "foodSearch",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3333/foodsSearch?q=",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"foodsSearch"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FoodsByFilter",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n\"allergens\": [\"Dairy\"]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/foodsbyFilter",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"foodsbyFilter"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FoodsById",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3333/foods/2",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"foods",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AddBmi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-Authorization",
+						"value": "dcb84f7ad573677388761879de2c138b",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bmi\": 20.9\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:3333/bmi",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"bmi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetBmi",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-Authorization",
+						"value": "34fa80795d9ae66b6a65387482219219",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:3333/bmi",
+					"host": [
+						"localhost"
+					],
+					"port": "3333",
+					"path": [
+						"bmi"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Recommendation",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/api/recommendations?bmi_category=underweight",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"recommendations"
+					],
+					"query": [
+						{
+							"key": "bmi_category",
+							"value": "underweight"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
